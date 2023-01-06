@@ -9,7 +9,7 @@ You can specify which explosives will be affected and the minimum/maximum fuse/p
 
 ## Download
 
-- **✅ Stable:** You can download the latest **stable** version at [Modrinth](https://modrinth.com/plugin/erraticexplosions), [Polymart](https://polymart.org/resource/3260), [Spigot](https://spigotmc.org/resources/107048), or [Bukkit](https://dev.bukkit.org/projects/erraticexplosions)
+- **✅ Stable:** You can download the latest **stable** version at [Modrinth](https://modrinth.com/plugin/erratic-explosions), [Polymart](https://polymart.org/resource/3313), [Spigot](https://spigotmc.org/resources/107234), or [Bukkit](https://dev.bukkit.org/projects/erratic-explosions)
 - **🚧 Snapshot:** You can download the latest **snapshot** version at [actions/workflows/build.yml](https://github.com/srnyx/erratic-explosions/actions/workflows/build.yml)
 
 # Wiki
