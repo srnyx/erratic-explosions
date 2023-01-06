@@ -1,6 +1,6 @@
 # Erratic Explosions
 
-This plugin will give TNT, Creepers, and [other types of explosives](#all-affected-explosives) a random power and fuse.
+This plugin will give TNT, Creepers, and [other types of explosives](https://github.com/srnyx/erratic-explosions/wiki/All-affected-explosives) a random power and fuse.
 
 You can specify which explosives will be affected and the minimum/maximum fuse/power all in the [`config.yml`](src/main/resources/config.yml).
 
