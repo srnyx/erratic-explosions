@@ -1,0 +1,18 @@
+# Whether TNT should be affected
+tnt: true
+# Whether creepers should be affected
+creepers: true
+# Whether dragon fireballs, fireballs, large fireballs, sized fireballs, small fireballs, and wither skulls should be affected
+other-explosives: true
+
+# Time it takes for explosion to occur since priming in ticks
+# Integer (ex: 1, 8, 56, 1759)
+fuse:
+  min: 20 # 1 second
+  max: 100 # 5 seconds
+
+# The strength of the explosion, aka radius/yield
+# Double (ex: 1.8, 8.32, 56.465, 1759.9652)
+power:
+  min: 1.0
+  max: 10.0
