@@ -6,7 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.entity.ExplosionPrimeEvent;
 
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import xyz.srnyx.annoyingapi.AnnoyingListener;
@@ -15,15 +14,13 @@ import xyz.srnyx.erraticexplosions.ErraticExplosions;
 
 
 public class TNTListener implements AnnoyingListener {
-    @NotNull
-    private final ErraticExplosions plugin;
+    @NotNull private final ErraticExplosions plugin;
 
-    @Override
-    public @NotNull ErraticExplosions getPlugin() {
+    @Override @NotNull
+    public ErraticExplosions getAnnoyingPlugin() {
         return plugin;
     }
 
-    @Contract(pure = true)
     public TNTListener(@NotNull ErraticExplosions plugin) {
         this.plugin = plugin;
     }
@@ -35,13 +32,7 @@ public class TNTListener implements AnnoyingListener {
     @EventHandler
     public void onEntitySpawn(@NotNull EntitySpawnEvent event) {
         final Entity entity = event.getEntity();
-        if (entity instanceof TNTPrimed) {
-            if (!plugin.config.tnt) {
-                unregister();
-                return;
-            }
-            ((TNTPrimed) entity).setFuseTicks(plugin.config.getFuse());
-        }
+        if (entity instanceof TNTPrimed) ((TNTPrimed) entity).setFuseTicks(plugin.config.getFuse());
     }
 
     /**
@@ -49,12 +40,6 @@ public class TNTListener implements AnnoyingListener {
      */
     @EventHandler
     public void onExplosionPrime(@NotNull ExplosionPrimeEvent event) {
-        if (event.getEntity() instanceof TNTPrimed) {
-            if (!plugin.config.tnt) {
-                unregister();
-                return;
-            }
-            event.setRadius(plugin.config.getPower());
-        }
+        if (event.getEntity() instanceof TNTPrimed) event.setRadius(plugin.config.getPower());
     }
 }

@@ -8,11 +8,11 @@ import java.util.Random;
 
 
 public class ErraticConfig {
-    @NotNull private final Random random = new Random();
+    @NotNull private static final Random RANDOM = new Random();
 
-    public boolean tnt;
-    public boolean creepers;
-    public boolean otherExplosives;
+    public final boolean tnt;
+    public final boolean creepers;
+    public final boolean otherExplosives;
     private final float powerMin;
     private final float powerMax;
     private final int fuseMin;
@@ -20,7 +20,6 @@ public class ErraticConfig {
 
     public ErraticConfig(@NotNull ErraticExplosions plugin) {
         final AnnoyingResource config = new AnnoyingResource(plugin, "config.yml");
-
         tnt = config.getBoolean("tnt");
         creepers = config.getBoolean("creepers");
         otherExplosives = config.getBoolean("other-explosives");
@@ -31,10 +30,10 @@ public class ErraticConfig {
     }
 
     public float getPower() {
-        return (random.nextFloat() * powerMax) + powerMin;
+        return (RANDOM.nextFloat() * powerMax) + powerMin;
     }
 
     public int getFuse() {
-        return random.nextInt(fuseMax) + fuseMin;
+        return RANDOM.nextInt(fuseMax) + fuseMin;
     }
 }

@@ -1,16 +1,16 @@
 name: ${name}
-description: Gives explosions random properties (power, delay, etc...)
+description: ${description}
 authors:
   - srnyx
-website: https://srnyx.xyz
+website: https://srnyx.com
 
-main: xyz.srnyx.erraticexplosions.ErraticExplosions
+main: ${group}.erraticexplosions.ErraticExplosions
 version: ${version}
 api-version: 1.13
 
 commands:
   eereload:
-    description: Reloads the plugin
+    description: Reloads the config and messages files
     aliases:
       - erraticreload
       - erraticexplosionsreload
@@ -18,4 +18,4 @@ commands:
 
 permissions:
   ee.command.reload:
-    description: Allows the player to reload the plugin
+    description: Allows the player to use /eereload

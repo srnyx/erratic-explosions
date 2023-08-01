@@ -5,24 +5,25 @@ import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.CreatureSpawnEvent;
 
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import xyz.srnyx.annoyingapi.AnnoyingListener;
 
 import xyz.srnyx.erraticexplosions.ErraticExplosions;
 
+import java.lang.reflect.InvocationTargetException;
+
+import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.*;
+
 
 public class CreeperListener implements AnnoyingListener {
-    @NotNull
-    private final ErraticExplosions plugin;
+    @NotNull private final ErraticExplosions plugin;
 
-    @Override
-    public @NotNull ErraticExplosions getPlugin() {
+    @Override @NotNull
+    public ErraticExplosions getAnnoyingPlugin() {
         return plugin;
     }
 
-    @Contract(pure = true)
     public CreeperListener(@NotNull ErraticExplosions plugin) {
         this.plugin = plugin;
     }
@@ -34,14 +35,13 @@ public class CreeperListener implements AnnoyingListener {
     @EventHandler
     public void onCreatureSpawn(@NotNull CreatureSpawnEvent event) {
         final Entity entity = event.getEntity();
-        if (entity instanceof Creeper) {
-            if (!plugin.config.creepers) {
-                unregister();
-                return;
-            }
-            final Creeper creeper = (Creeper) entity;
-            creeper.setExplosionRadius((int) plugin.config.getPower());
-            creeper.setMaxFuseTicks(plugin.config.getFuse());
+        if (CREEPER_SET_EXPLOSION_RADIUS == null || CREEPER_SET_MAX_FUSE_TICKS == null || !(entity instanceof Creeper)) return;
+        final Creeper creeper = (Creeper) entity;
+        try {
+            CREEPER_SET_EXPLOSION_RADIUS.invoke(creeper, (int) plugin.config.getPower());
+            CREEPER_SET_MAX_FUSE_TICKS.invoke(creeper, plugin.config.getFuse());
+        } catch (final IllegalAccessException | InvocationTargetException e) {
+            e.printStackTrace();
         }
     }
 }

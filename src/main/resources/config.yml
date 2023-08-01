@@ -1,6 +1,6 @@
 # Whether TNT should be affected
 tnt: true
-# Whether creepers should be affected
+# 1.12.2+ Whether creepers should be affected
 creepers: true
 # Whether dragon fireballs, fireballs, large fireballs, sized fireballs, small fireballs, and wither skulls should be affected
 other-explosives: true
