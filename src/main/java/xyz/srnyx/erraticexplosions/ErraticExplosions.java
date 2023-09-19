@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 import xyz.srnyx.annoyingapi.AnnoyingPlugin;
 import xyz.srnyx.annoyingapi.PluginPlatform;
 
+import xyz.srnyx.erraticexplosions.commands.ReloadCommand;
 import xyz.srnyx.erraticexplosions.listeners.CreeperListener;
 import xyz.srnyx.erraticexplosions.listeners.ExplosiveListener;
 import xyz.srnyx.erraticexplosions.listeners.TNTListener;
@@ -25,9 +26,7 @@ public class ErraticExplosions extends AnnoyingPlugin {
                         PluginPlatform.hangar(this, "srnyx"),
                         PluginPlatform.spigot("107234")))
                 .bStatsOptions(bStatsOptions -> bStatsOptions.id(18859))
-                .registrationOptions.automaticRegistration.packages(
-                        "xyz.srnyx.erraticexplosions.commands",
-                        "xyz.srnyx.erraticexplosions.listeners");
+                .registrationOptions.commandsToRegister(new ReloadCommand(this));
     }
 
     @Override
