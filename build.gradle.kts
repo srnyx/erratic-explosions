@@ -8,5 +8,5 @@ plugins {
     id("com.gradleup.shadow") version "8.3.5"
 }
 
-setupAnnoyingAPI("5.1.3", "xyz.srnyx", "2.0.0", "Gives explosions random properties (power, delay, etc...)")
+setupAnnoyingAPI("5.1.3", "xyz.srnyx", "2.0.1", "Gives explosions random properties (power, delay, etc...)")
 spigotAPI("1.8.8")
