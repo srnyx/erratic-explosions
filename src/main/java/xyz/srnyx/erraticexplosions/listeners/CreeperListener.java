@@ -13,10 +13,11 @@ import xyz.srnyx.erraticexplosions.ErraticExplosions;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.*;
+import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.CREEPER_SET_EXPLOSION_RADIUS;
+import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.CREEPER_SET_MAX_FUSE_TICKS;
 
 
-public class CreeperListener implements AnnoyingListener {
+public class CreeperListener extends AnnoyingListener {
     @NotNull private final ErraticExplosions plugin;
 
     @Override @NotNull

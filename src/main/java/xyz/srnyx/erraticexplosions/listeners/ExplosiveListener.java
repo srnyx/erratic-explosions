@@ -13,7 +13,7 @@ import xyz.srnyx.annoyingapi.AnnoyingListener;
 import xyz.srnyx.erraticexplosions.ErraticExplosions;
 
 
-public class ExplosiveListener implements AnnoyingListener {
+public class ExplosiveListener extends AnnoyingListener {
     @NotNull private final ErraticExplosions plugin;
 
     @Override @NotNull

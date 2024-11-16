@@ -5,12 +5,12 @@ import org.jetbrains.annotations.NotNull;
 import xyz.srnyx.annoyingapi.AnnoyingPlugin;
 import xyz.srnyx.annoyingapi.PluginPlatform;
 
-import xyz.srnyx.erraticexplosions.commands.ReloadCommand;
 import xyz.srnyx.erraticexplosions.listeners.CreeperListener;
 import xyz.srnyx.erraticexplosions.listeners.ExplosiveListener;
 import xyz.srnyx.erraticexplosions.listeners.TNTListener;
 
-import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.*;
+import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.CREEPER_SET_EXPLOSION_RADIUS;
+import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.CREEPER_SET_MAX_FUSE_TICKS;
 
 
 public class ErraticExplosions extends AnnoyingPlugin {
@@ -22,11 +22,11 @@ public class ErraticExplosions extends AnnoyingPlugin {
     public ErraticExplosions() {
         options
                 .pluginOptions(pluginOptions -> pluginOptions.updatePlatforms(
-                        PluginPlatform.modrinth("erratic-explosions"),
-                        PluginPlatform.hangar(this, "srnyx"),
+                        PluginPlatform.modrinth("6LSX31U3"),
+                        PluginPlatform.hangar(this),
                         PluginPlatform.spigot("107234")))
                 .bStatsOptions(bStatsOptions -> bStatsOptions.id(18859))
-                .registrationOptions.commandsToRegister(new ReloadCommand(this));
+                .registrationOptions.automaticRegistration.packages("xyz.srnyx.erraticexplosions.commands");
     }
 
     @Override

@@ -10,7 +10,7 @@ import xyz.srnyx.annoyingapi.message.AnnoyingMessage;
 import xyz.srnyx.erraticexplosions.ErraticExplosions;
 
 
-public class ReloadCommand implements AnnoyingCommand {
+public class ReloadCommand extends AnnoyingCommand {
     @NotNull private final ErraticExplosions plugin;
 
     public ReloadCommand(@NotNull ErraticExplosions plugin) {
