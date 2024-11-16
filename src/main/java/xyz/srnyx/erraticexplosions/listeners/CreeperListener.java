@@ -8,10 +8,12 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import org.jetbrains.annotations.NotNull;
 
 import xyz.srnyx.annoyingapi.AnnoyingListener;
+import xyz.srnyx.annoyingapi.AnnoyingPlugin;
 
 import xyz.srnyx.erraticexplosions.ErraticExplosions;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.logging.Level;
 
 import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.CREEPER_SET_EXPLOSION_RADIUS;
 import static xyz.srnyx.erraticexplosions.reflection.org.bukkit.entity.RefCreeper.CREEPER_SET_MAX_FUSE_TICKS;
@@ -42,7 +44,7 @@ public class CreeperListener extends AnnoyingListener {
             CREEPER_SET_EXPLOSION_RADIUS.invoke(creeper, (int) plugin.config.getPower());
             CREEPER_SET_MAX_FUSE_TICKS.invoke(creeper, plugin.config.getFuse());
         } catch (final IllegalAccessException | InvocationTargetException e) {
-            e.printStackTrace();
+            AnnoyingPlugin.log(Level.WARNING, "Failed to set creeper explosion power/fuse", e);
         }
     }
 }
