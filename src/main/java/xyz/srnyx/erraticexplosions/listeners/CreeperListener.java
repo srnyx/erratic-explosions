@@ -41,8 +41,8 @@ public class CreeperListener extends AnnoyingListener {
         if (CREEPER_SET_EXPLOSION_RADIUS == null || CREEPER_SET_MAX_FUSE_TICKS == null || !(entity instanceof Creeper)) return;
         final Creeper creeper = (Creeper) entity;
         try {
-            CREEPER_SET_EXPLOSION_RADIUS.invoke(creeper, (int) plugin.config.getPower());
-            CREEPER_SET_MAX_FUSE_TICKS.invoke(creeper, plugin.config.getFuse());
+            CREEPER_SET_EXPLOSION_RADIUS.invoke(creeper, (int) plugin.config.power.getRandom());
+            CREEPER_SET_MAX_FUSE_TICKS.invoke(creeper, plugin.config.fuse.getRandom());
         } catch (final IllegalAccessException | InvocationTargetException e) {
             AnnoyingPlugin.log(Level.WARNING, "Failed to set creeper explosion power/fuse", e);
         }

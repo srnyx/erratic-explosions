@@ -31,6 +31,6 @@ public class ExplosiveListener extends AnnoyingListener {
     @EventHandler
     public void onExplosionPrime(@NotNull ExplosionPrimeEvent event) {
         final Entity entity = event.getEntity();
-        if (entity instanceof Explosive && !(entity instanceof TNTPrimed)) event.setRadius(plugin.config.getPower());
+        if (entity instanceof Explosive && !(entity instanceof TNTPrimed)) event.setRadius(plugin.config.power.getRandom());
     }
 }
